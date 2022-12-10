@@ -24,7 +24,7 @@ const Hero = () => {
                             <button className='text-4xl mr-3'><Link><FaFacebook/></Link></button>
                             
                         </div>
-                        <button className="btn btn-primary">Resume</button>
+                        <a href='Razan_Sarker_santa_Final_Resume.pdf' download='Razan Sarker.pdf' className='btn'>Resume</a>
                
                 </div>
             </div>
