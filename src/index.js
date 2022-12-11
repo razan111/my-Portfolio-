@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Toaster } from 'react-hot-toast';
+import { themeContext, ThemeProvider } from './Context/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const theme = useContext(themeContext);
+// const darkMode = theme.state.darkMode;
+
+
 root.render(
+
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+    <Toaster />
   </React.StrictMode>
 );
 

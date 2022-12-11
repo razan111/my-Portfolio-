@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import bg from '../../../image/bg.png'
+import Toggle from '../../Toggle/Toggle';
 
 const Navbar = () => {
     const menuItems = <>
     <li><Link to='/'>Home</Link></li>
+    <li><Link to='/about'>About Me</Link></li>
+    <li><Link to='/projects'>My Projects</Link></li>
+    <li><Link to='/blogs'>Blogs</Link></li>
     <li><Link to='/contact'>Contact</Link></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-blue-600 text-white lg:px-32 md:px-20 px-1">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -18,6 +23,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl">Razan Sarker</Link>
+                <Toggle></Toggle>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

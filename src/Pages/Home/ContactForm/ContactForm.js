@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { FaPhoneAlt } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { GoLocation } from 'react-icons/go';
 import emailjs from 'emailjs-com'
+import { toast } from 'react-hot-toast';
+import { themeContext } from '../../../Context/Context';
 
 const ContactForm = () => {
-    function sendEmail(event){
+    function sendEmail(event) {
         event.preventDefault()
         emailjs.sendForm('service_3wqxtpp', 'template_cubyf95', event.target, '5zgd5Z-NxjpP94vbe')
-        .then(res => {
-            console.log(res)
-        }).catch(err => console.error(err))
-    }
-    return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            .then(res => {
+                console.log(res)
+                toast.success('Successfull Email send')
 
-                <div className="card flex-shrink-0 w-1/2 shadow-2xl bg-base-100">
+            }).catch(err => console.error(err))
+    }
+
+    const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+    return (
+        <div className="hero my-12">
+            <div className="hero-content flex-col-reverse lg:flex-row-reverse">
+
+                <div className="card flex-shrink-0 lg:w-1/2 w-full shadow-2xl bg-base-100">
                     <form className="card-body" onSubmit={sendEmail}>
                         <div className="form-control">
                             <label className="label">
@@ -50,7 +57,7 @@ const ContactForm = () => {
 
                         <div className="form-control mt-6">
                             {/* <button className="btn btn-primary">Submit</button> */}
-                            <input type="submit" className='btn btn-primary'  value="Submit"/>
+                            <input type="submit" className='btn btn-primary' value="Submit" />
                         </div>
                     </form>
                 </div>
@@ -59,7 +66,10 @@ const ContactForm = () => {
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <div className="divider w-24"></div>
 
-                    <div className="card bg-base-100 shadow-xl">
+                    <div className="card shadow-xl"  style={{
+                                background: darkMode ? "gray" : "",
+                                color: darkMode ? "white" : "",
+                            }}>
                         <div className="card-body flex flex-row items-center">
 
                             <div className='mr-3 text-3xl'>
@@ -74,7 +84,10 @@ const ContactForm = () => {
                         </div>
                     </div>
 
-                    <div className="card bg-base-100 shadow-xl my-3">
+                    <div className="card shadow-xl my-3" style={{
+                                background: darkMode ? "gray" : "",
+                                color: darkMode ? "white" : "",
+                            }}>
                         <div className="card-body flex flex-row items-center">
 
                             <div className='mr-3 text-3xl'>
@@ -89,7 +102,10 @@ const ContactForm = () => {
                         </div>
                     </div>
 
-                    <div className="card bg-base-100 shadow-xl">
+                    <div className="card shadow-xl" style={{
+                                background: darkMode ? "gray" : "",
+                                color: darkMode ? "white" : "",
+                            }}>
                         <div className="card-body flex flex-row items-center">
 
                             <div className='mr-3 text-3xl'>
