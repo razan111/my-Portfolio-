@@ -16,7 +16,7 @@ const Hero = () => {
                         <h1 className="text-5xl font-bold">Hi I am <span style={{ color: 'blue', fontWeight: 'bold' }}>
                             {/* Style will be inherited from the parent element */}
                             <Typewriter
-                                words={['Razan Sarker Santa', 'A MERN stack web Developer', 'A React Developer', 'Repeat!']}
+                                words={['Razan Sarker Santa', 'A MERN stack web Developer', 'A React Developer', 'Programmer!']}
                                 loop={15}
                                 cursor
                                 cursorStyle='_'
